@@ -1,0 +1,2 @@
+docker build . -t docparser:latest
+docker run --rm -it -e DATE="2019-08-01" -e SIGNIFICANT_CHANGE=25 -e REPOSITORY=https://github.com/dotnet/docs -v c:/git_ws/MaximRouiller/DocParser/output:/data docparser:latest
