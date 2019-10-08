@@ -15,11 +15,13 @@ nf_input="/data/$1.NewFiles.md"
 nf_output="/data/$1.NewFiles.md.tmp"
 
 touch $nf_output
+sort $nf_input -o $nf_input
+
 while read -r line
 do
 title=$(git show master:$line | sed -n 's/title: //p' )
 title="${title//[\"]}"
-echo "* [$title]($3${line}?wt.mc_id=)" >> $nf_output
+echo "* ✨ [$title]($3${line}?wt.mc_id=)" >> $nf_output
 
 done < "$nf_input"
 mv $nf_output $nf_input -f
@@ -44,6 +46,9 @@ rm $mf_output -f
 
 # Generate an extensive logs of all modified files with their added/removed lines.
 git log --diff-filter=M --numstat --since=$1 --pretty=''  *.md > $mf_input
+
+sort -t \t -k 2 $mf_input -o $mf_input
+
 
 touch $mf_output
 while IFS=$'\t' read -r added removed filepath
