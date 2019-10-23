@@ -10,6 +10,11 @@ fi
 
 # Generate the file with the new files added to the repository.
 git log --diff-filter=A --name-only --since=$1 --pretty=''  *.md > /data/$1.NewFiles.md
+git log --diff-filter=M --numstat --since=$1 --pretty=''  *.md > /data/$1.ModifiedFiles.md
+
+python ../../process.py /data/$1.NewFiles.md /data/$1.ModifiedFiles.md
+return
+
 
 nf_input="/data/$1.NewFiles.md"
 nf_output="/data/$1.NewFiles.md.tmp"
