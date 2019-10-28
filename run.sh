@@ -12,7 +12,7 @@ fi
 git log --diff-filter=A --name-only --since=$1 --pretty=''  *.md > /data/$1.NewFiles.md
 git log --diff-filter=M --numstat --since=$1 --pretty=''  *.md > /data/$1.ModifiedFiles.md
 
-python ../../process.py /data/$1.NewFiles.md /data/$1.ModifiedFiles.md
+python ../../process.py /data/$1.NewFiles.md /data/$1.ModifiedFiles.md /data/$4-docs
 return
 
 

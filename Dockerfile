@@ -14,6 +14,8 @@ RUN apk add --no-cache bash; \
     apk add --no-cache git
 COPY run.sh ./run.sh
 COPY process.py ./process.py
+COPY requirements.txt ./requirements.txt
 RUN chmod +x ./run.sh
 
+RUN pip install -r requirements.txt
 ENTRYPOINT ./run.sh ${DATE} ${REPOSITORY} ${BASE_URL} ${PRODUCT} ${SIGNIFICANT_CHANGE} ${ROOT_FOLDER}
