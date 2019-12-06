@@ -1,2 +1,2 @@
 docker build . -t docparser:latest
-docker run --rm -it -e DATE=2019-10-01 -e ROOT_FOLDER=articles -e PRODUCT=azure -e BASE_URL=https://docs.microsoft.com/azure/ -e REPOSITORY=https://github.com/MicrosoftDocs/azure-docs -v c:/git_ws/MaximRouiller/DocParser/output:/data docparser:latest
+docker run --rm -it -e DATE=2019-11-01 -e ARTICLE_FILTER=storage -e ROOT_FOLDER=articles -e PRODUCT=azure -e BASE_URL=https://docs.microsoft.com/azure/ -e REPOSITORY=https://github.com/MicrosoftDocs/azure-docs -v c:/git_ws/MaximRouiller/DocParser/output:/data docparser:latest

@@ -1,2 +1,0 @@
-docker build . -t docparser:latest
-docker run --rm -it -e DATE="2019-10-01" -e ROOT_FOLDER=aspnetcore -e SIGNIFICANT_CHANGE=25 -e PRODUCT=aspnet -e BASE_URL=https://docs.microsoft.com/aspnet/core/ -e REPOSITORY=https://github.com/aspnet/AspNetCore.Docs -v c:/git_ws/MaximRouiller/DocParser/output:/data docparser:latest

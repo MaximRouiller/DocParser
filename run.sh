@@ -1,4 +1,13 @@
 #!/bin/sh 
+# filepath="articles/storage/blobs/data-lake-storage-directory-file-acl-powershell.md"
+# echo $6
+# echo $7
+# if [[$filepath =~ "^$6/$7"]]; then
+#     echo "true"
+# else
+#     echo "false"
+# fi
+# return
 
 if test -d /data/$4-docs; then
     # Go to /data/docs directory and update the repository to stay up to date. Assume bare repository
